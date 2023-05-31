@@ -47,6 +47,7 @@ body {
 </style>
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <h2>Search</h2>
 <input type="text" id="search" name="search" placeholder="search Name/Department/Designation" style="width:500px;height:45px;">
@@ -71,6 +72,16 @@ body {
 
 
 </div>
+<script>
+$(document).ready(function() {
+    $("#search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".card").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+        });
+    });
+});
+</script>
 
 </body>
 </html>
