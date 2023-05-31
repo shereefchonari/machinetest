@@ -11,10 +11,10 @@ class User extends Model
 
     public function department()
     {
-        return $this->hasOne(Department::class, 'fk_department');
+        return $this->hasOne(Department::class, 'id', 'fk_department');
     }
     public function designation()
     {
-        return $this->hasOne(Designation::class, 'fk_designation');
+        return $this->hasOne(Designation::class, 'id', 'fk_designation');
     }
 }
